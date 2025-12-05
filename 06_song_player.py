@@ -36,16 +36,39 @@ Beide Songs haben denselben Datentyp: True
 
 # TODO: Importiere die Klasse Song aus 05_song
 # from 05_song import Song
-
+from song import Song
 
 # TODO: Erstelle verschiedene Variablen mit unterschiedlichen Datentypen
 # text = "Hallo"
 # zahl = 42
 # liste = [1, 2, 3]
 
+text= "Hallo"
+zahl = 42
+liste = [1,2,3]
+
+print(type(text))
+print(type(zahl))
+print(type(liste))
+
 
 # TODO: Erstelle 3 Song-Objekte mit Titeln und Interpreten deiner Wahl
+song1=Song("Africa","Toto")
+song2=Song("Africa","Toto")
+print(type(song1))
 
+
+liste_songs=[song1,song2]
+print(liste_songs[0].titel)
+
+song3=Song("Fein", "Travis Scott")
+liste_songs.append(song3)
+
+song4=Song("brick by brick", "Imagency")
+liste_songs.append(song3)
+
+for song in liste_songs:
+    print(song.titel)
 
 # TODO: Zeige die Datentypen mit type()
 # print("=== Datentypen Vergleich ===")
