@@ -15,36 +15,36 @@ Der Einkaufswagen soll:
 
 # TODO 1: Erstelle die Klasse Artikel mit passendem Konstruktor
 class Artikel:
-    """
-    Ein einzelner Artikel im Einkaufswagen.
-    
-    Attribute:
-    - name (str): Name des Artikels
-    - preis (float): Preis des Artikels
-    """
+    def __init__(self,name,preis):
+        self.name=name
+        self.preis=preis
+        print(f"Neuer Artikel: {self.name} mit Preis {self.preis} wurde erstellt")
+
+    def zeige_info(self):
+        print(f"{self.name}: {self.preis}€ ")
+
+artikel1 = Artikel("Controller", 79.99)
+artikel1.zeige_info()
+
+
     # TODO 1.1: Schreibe den Konstruktor __init__
     # Parameter: self, name, preis
     # Speichere name und preis als Attribute
-    pass
+
     
     # TODO 1.2: Schreibe die Methode zeige_info()
     # Gibt aus: "- {name}: {preis} EUR"
-    pass
+  
 
 
 # TODO 2: Erstelle die Klasse Einkaufswagen
 class Einkaufswagen:
-    """
-    Ein Einkaufswagen der Artikel-Objekte verwaltet.
-    
-    Attribute:
-    - artikel (list): Liste von Artikel-Objekten
-    """
-    
-    # TODO 2.1: Schreibe den Konstruktor __init__
-    # Keine Parameter außer self
-    # Initialisiere eine leere Liste self.artikel = []
-    pass
+    def __init__(self):
+        self.artikel=[]
+
+    def hinzufügen(self, artikel):
+        self.artikel.append(artikel)
+        print(f"✅ {artikel.name} hinzugefügt")
     
     # TODO 2.2: Schreibe die Methode hinzufuegen(artikel)
     # Parameter: self, artikel (ein Artikel-Objekt)
@@ -75,17 +75,22 @@ class Einkaufswagen:
 # artikel1 = Artikel("Brot", 2.99)
 # artikel2 = Artikel("Milch", 1.49)
 # artikel3 = Artikel("Käse", 4.50)
-pass
+
+artikel1=Artikel("Brot", 2.99)
+artikel2=Artikel("Milch", 1.49)
+artikel1=Artikel("Käse", 4.50)
 
 # TODO 3.2: Erstelle einen Einkaufswagen
 # wagen = Einkaufswagen()
-pass
+wagen=Einkaufswagen()
 
 # TODO 3.3: Füge die drei Artikel zum Wagen hinzu
 # wagen.hinzufuegen(artikel1)
 # wagen.hinzufuegen(artikel2)
 # wagen.hinzufuegen(artikel3)
-pass
+wagen.hinzufügen(artikel1)
+wagen.hinzufügen(artikel2)
+wagen.hinzufügen(artikel3)
 
 # TODO 3.4: Zeige den Inhalt des Wagens
 # wagen.zeige_inhalt()
